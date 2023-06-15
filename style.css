@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: white;
+}
+.wrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "h1 h1 h1"
+    "header header header"
+    "banner banner sb1"
+    "banner banner sb2"
+    "sm main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+}
+
+h1 {
+  grid-area: h1;
+  background: blue;
+}
+header {
+  grid-area: header;
+  background: black;
+}
+.banner {
+  background-color: thistle;
+  grid-area: banner;
+}
+
+.side-box1 {
+  grid-area: sb1;
+  background: rgb(115, 37, 11);
+}
+.side-box2 {
+  grid-area: sb2;
+  background: orange;
+}
+
+.side-menu {
+  grid-area: sm;
+  background: rgb(103, 91, 159);
+}
+.tags {
+  grid-area: tags;
+  background: purple;
+}
+
+.recent {
+  grid-area: recent;
+  background: maroon;
+}
+main {
+  grid-area: main;
+  background: rgb(96, 14, 28);
+}
+.footer {
+  grid-area: footer;
+  background: black;
+}
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+@media (0<=width<760px) {
+  .wrapper {
+    grid-template-areas:
+      "h1 "
+      " header"
+      "banner "
+      "sb1 "
+      "sb2 "
+      "sm"
+      "main"
+      "tags"
+      "recent"
+      " footer";
+  }
+}
+@media (0<=width<760px) {
+  .wrapper {
+    grid-template-areas:
+      "h1 h1"
+      "header header"
+      "banner banner"
+      "sb1 sb2"
+      "sm sm "
+      "main main"
+      "recent tags"
+      "footer footer";
+  }
+}
